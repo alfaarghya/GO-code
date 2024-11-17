@@ -225,3 +225,49 @@ Get started with Hello, World.
     var bool1 bool = true
     var bool2 bool
     ```
+
+## Day 3 - Operations
+
+### Arithmetic operation
+
+| Operator | Name           | Description                      | example |
+| -------- | -------------- | -------------------------------- | ------- |
+| +        | Addition       | adds values together             | x + y   |
+| -        | Substraction   | Subtracts one value from another | x - y   |
+| \*       | Multiplication | Multiplies two values            | x \* y  |
+| /        | Division       | divides one value by another     | x / y   |
+| %        | Modulus        | return the divison remainder     | x % y   |
+
+### **Comparison Operators**
+
+| Operator | Name               | example |
+| -------- | ------------------ | ------- |
+| ==       | Equal tp           | x == y  |
+| ! =      | not equal          | x ! = y |
+| >        | greater than       | x > y   |
+| <        | less than          | x < y   |
+| > =      | greater than euqal | x > = y |
+| < =      | less than equal    | x < = y |
+
+### Logical operator
+
+| Operator | Name        | Description                                                | example             |
+| -------- | ----------- | ---------------------------------------------------------- | ------------------- |
+| &&       | Logical AND | returns true if both statement are true                    | x < 11 && x < 20    |
+|          | Logical OR  | returns true if one of the statements is true              |
+| !        | Logical NOT | reverse the result, returns true if false or false if true | !(x < 11 && x < 20) |
+
+### Bitwise operators
+
+| Operator | Name                 | Description                                                                                             | example |
+| -------- | -------------------- | ------------------------------------------------------------------------------------------------------- | ------- |
+| &        | AND                  | Sets each bit to 1 if both bits are 1                                                                   | x & y   |
+|          | OR                   | Sets each bit to 1 if one of two bits is 1                                                              |
+| ^        | XOR                  | Sets each bit to 1 if only one of two bits is 1                                                         | x ^ y   |
+| <<       | Zero fill left shift | Shift left by pushing zeros in from the right                                                           | x << 3  |
+| >>       | zero fll right shift | Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off | x >> 4  |
+
+```
+📌 NOTE : for any missing operator check the code, can't use OR(|) operator because markdown table consider it as a row end
+
+```
