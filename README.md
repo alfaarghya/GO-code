@@ -271,3 +271,128 @@ Get started with Hello, World.
 📌 NOTE : for any missing operator check the code, can't use OR(|) operator because markdown table consider it as a row end
 
 ```
+
+## Day 3 - loop & conditions
+
+### Condition Statement
+
+Conditional statements are used to perform different actions based on different conditions.
+
+A condition can be either `true` or `false`.
+
+Go supports the usual comparison operators from mathematics:
+
+- Less than `<`
+- Less than or equal `<=`
+- Greater than `>`
+- Greater than or equal `>=`
+- Equal to `==`
+- Not equal to `!=`
+
+Additionally, Go supports the usual logical operators:
+
+- Logical AND `&&`
+- Logical OR `||`
+- Logical NOT `!`
+
+You can use these operators or their combinations to create conditions for different decisions.
+
+#### Go has the following conditional statements:
+
+- Use `if` to specify a block of code to be executed, if a specified condition is true
+- Use `else` to specify a block of code to be executed, if the same condition is false
+- Use `else if` to specify a new condition to test, if the first condition is false
+  ```go
+    var age int;
+
+    fmt.Printf("What's your age? \n>")
+    fmt.Scan(&age)
+
+    if(age == 18) {
+      fmt.Println(">> You are ready to get your Driver License")
+    } else if(age > 18) {
+      fmt.Println(">> You are eligible for a Driver License")
+      } else {
+      fmt.Println(">> Too young to Drive!! Come back when you are 18 years old")
+    }
+  ```
+- Use `switch` to specify many alternative blocks of code to be executed
+  - Single Case switch
+    ```go
+      var day int;
+
+      fmt.Printf("Give Day Number(1 to 7)? \n>")
+      fmt.Scan(&day)
+
+      switch day {
+      case 1:
+        fmt.Println(">> Sunday")
+      case 2:
+        fmt.Println(">> Monday")
+      case 3:
+        fmt.Println(">> Tuesday")
+      case 4:
+        fmt.Println(">> Wednesday")
+      case 5:
+        fmt.Println(">> Thursday")
+      case 6:
+        fmt.Println(">> Friday")
+      case 7:
+        fmt.Println(">> Saturday")
+      default:
+        fmt.Println(">> Not a day!!!!")
+      }
+    ```
+  - Multi Case switch
+    ```go
+      var day int;
+
+      fmt.Printf("Give Day Number(1 to 7)? \n>")
+      fmt.Scan(&day)
+
+      switch day {
+      case 2,3,4,5,6:
+        fmt.Println(">> Week Day -> means work day")
+      case 1,7:
+        fmt.Println(">> Weekend -> means enjoy day")
+      default:
+        fmt.Println(">> Not a day!!!!")
+      }
+    ```
+
+### Loop
+
+The `for` loop is the only loop available in Go.
+
+The `for` loop loops through a block of code a specified number of times.
+
+### For loop
+
+```go
+for i := 0; i < 10; i++ { // for initilise; loop condition; update statement
+    fmt.Println(i)
+  }
+```
+
+#### Nested for loop
+
+```go
+for i := 1; i <= 5; i++ {
+    for j := 1; j <= i; j++ {
+      fmt.Printf("*")
+    }
+    fmt.Println()
+  }
+```
+
+#### Range
+
+The `range` keyword is used to more easily iterate through the elements of an array, slice or map. It returns both the index and the value.
+
+```go
+ colors := [5]string{"white", "black", "red", "green", "blue"}; //array of string
+
+  for idx, val := range colors {
+    fmt.Println(idx, "->", val)
+  }
+```
