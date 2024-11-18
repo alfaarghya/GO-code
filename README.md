@@ -272,7 +272,7 @@ Get started with Hello, World.
 
 ```
 
-## Day 3 - loop & conditions
+## Day 4 - loop & conditions
 
 ### Condition Statement
 
@@ -302,6 +302,7 @@ You can use these operators or their combinations to create conditions for diffe
 - Use `if` to specify a block of code to be executed, if a specified condition is true
 - Use `else` to specify a block of code to be executed, if the same condition is false
 - Use `else if` to specify a new condition to test, if the first condition is false
+
   ```go
     var age int;
 
@@ -316,8 +317,11 @@ You can use these operators or their combinations to create conditions for diffe
       fmt.Println(">> Too young to Drive!! Come back when you are 18 years old")
     }
   ```
+
 - Use `switch` to specify many alternative blocks of code to be executed
+
   - Single Case switch
+
     ```go
       var day int;
 
@@ -343,7 +347,9 @@ You can use these operators or their combinations to create conditions for diffe
         fmt.Println(">> Not a day!!!!")
       }
     ```
+
   - Multi Case switch
+
     ```go
       var day int;
 
