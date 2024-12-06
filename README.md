@@ -402,3 +402,135 @@ The `range` keyword is used to more easily iterate through the elements of an 
     fmt.Println(idx, "->", val)
   }
 ```
+
+## Day 5 - Functions
+
+A function is a block of statements that can be used repeatedly in a program.
+
+### Naming Rules for Function
+
+- A function name must start with a letter
+- A function name can only contain alpha-numeric characters and underscores (`A-z`, `0-9`, and `_` )
+- Function names are case-sensitive. A function starts with a small letter means it’s a Private function and starts with a capital letter, which means it’s a Public function.
+- A function name cannot contain spaces
+- If the function name consists of multiple words, techniques introduced for multi-word variable naming can be used
+
+### Create a Function
+
+- Use the `func` keyword.
+- Specify a name for the function, followed by parentheses ().
+- Finally, add code that defines what the function should do, inside curly braces {}.
+
+```go
+func FunctionName() {
+	// code block
+}
+```
+
+### Call a Function
+
+```go
+package main
+import ("fmt")
+
+func hello() {
+	fmt.Println("Greetings & Hello World! to you")
+}
+
+func main() {
+	hello() //call the function, also we can call it as many time we want.
+}
+```
+
+### **Parameters and Arguments**
+
+Information can be passed to functions as a parameter. Parameters act as variables inside the function
+
+```go
+func FunctionName(param1 type, param2 type, param3 type) {
+  // code block
+}
+```
+
+example
+
+```go
+package main
+import ("fmt")
+
+func hello(name string) {
+	fmt.Println("Greetings & Hello World! to ", name)
+}
+
+func main() {
+	hello(Arghya) //call the function, also we can call it as many time we want.
+}
+```
+
+### **Return Values**
+
+If you want the function to return a value, you need to define the data type of the return value (such as `int`, `string`, etc), and also use the `return` keyword inside the function.
+
+```go
+func FunctionName(param1 type, param2 type) type {
+  // code to be executed
+  return output
+}
+```
+
+example
+
+```go
+package main
+import ("fmt")
+
+func add(x int, y int) int {
+  return x + y
+}
+
+func main() {
+  fmt.Println(add(1, 2))
+}
+```
+
+### **Named Return Values**
+
+```go
+// Here, we name the return value as result (of type int), and return the value with a naked return (means that we use the return statement without specifying the variable name)
+package main
+import ("fmt")
+
+func add(x int, y int) (result int) {
+  result = x + y
+  return
+}
+
+func main() {
+  fmt.Println(add(1, 2))
+}
+```
+
+### **Multiple Named Return Values**
+
+```go
+package main
+import ("fmt")
+
+func isEven(a int) (result int, evenOdd string) {
+	result = a%2
+	if (result == 0) {
+		evenOdd = "it's even"
+		return
+	} else {
+		evenOdd = "it's odd"
+		return
+	}
+}
+
+func main() {
+  a := 117
+	val, ans := isEven(a)
+	fmt.Println(a,"% 2 =", val )
+	fmt.Println(a,">", ans )
+}
+```
