@@ -534,3 +534,127 @@ func main() {
 	fmt.Println(a,">", ans )
 }
 ```
+
+## Day 6 - Array & slice
+
+### Array
+
+Arrays are used to store multiple values of the same type in a single variable, instead of declaring separate variables for each value.
+
+#### Declare an Array
+
+1. **with length**
+
+   ```go
+   var arrayName = [length]datatype{values}
+
+   //example
+   var arr1 = [5]int{1,11,111,1111,11111}
+   ```
+
+2. **without length**
+
+   ```go
+   var arrayName = [...]datatype{values}
+
+   //example
+   var arr2 = [...]int{1,11,111,1111}
+   ```
+
+#### Initialize
+
+in go when we initialize any array, at first it contain 0 values only.
+
+1. **Not initialize**
+
+   ```go
+   arr3 := [5]int{} // output -> [0,0,0,0,0]
+   ```
+
+2. **Partially initialize**
+
+   ```go
+   arr4 := [5]int{1,2} //output -> [1,2,0,0,0]
+   ```
+
+3. **Fully initialize**
+
+   ```go
+   arr5 := [5]int{1,2,3,4,5} //output -> [1,2,3,4,5]
+   ```
+
+4. **Initialize specific element**
+
+   ```go
+   arr6 := [5]int{1:10,3:55} //output -> [0,10,0,55,0]
+   ```
+
+#### Access & change
+
+once an array is declared with a length we can’t change the length, but we can access & change the values of an array
+
+```go
+arr6[0] = 111 //output -> [111,10,0,55,0]
+```
+
+### Slice
+
+Slices are similar to arrays, but are more powerful and flexible. Like arrays, slices are also used to store multiple values of the same type in a single variable. However, unlike arrays, the length of a slice can grow and shrink as you see fit.
+
+#### Declare an Array
+
+1. **Common Declearation**
+
+   ```go
+   var sliceName = []datatype{values}
+
+   //example
+   var sli1 = []int{1,11,111,1111,11111}
+   ```
+
+2. **Create a slice with an array**
+
+   ```go
+   var arrayName = [length]datatype{values}
+   var sliceName = myarray[start:end]
+
+   //example
+   var arr1 = [6]int{10,20,30,40,50,60}
+   var sli2 = arr1[3:6]
+   ```
+
+3. **Create a slice make() function**
+
+   ```go
+   var sliceName = make([]type, length, capacity)
+
+   //example
+   var sli3 = make([]int, 5,10)
+   ```
+
+#### Append
+
+You can append elements to the end of a slice using the `append()`function
+
+1. **Append Elements**
+
+   ```go
+   sliceName = append(slice_name, element1, element2, ...)
+
+   //example
+   var sli4 = []int{2,4,6,8}
+   sli4 = append(sli4, 10, 20) // [2,4,6,8,10,20]
+   ```
+
+2. **Append another slice**
+
+   ```go
+   sliceName = append(sliceName, slice1...)
+
+   //example
+   sli4 = append(sli4, sli1...) //output -> [2 4 6 8 10 20 1 11 121 1221 11211]
+   ```
+
+#### Access & change
+
+it will be the same technique as array.
