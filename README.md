@@ -659,13 +659,15 @@ You can append elements to the end of a slice using the `append()`function
 
 it will be the same technique as array.
 
-## Struct
+## Day 6 - Struct & Map
+
+### Struct
 
 A struct (short for structure) is used to create a collection of members of different data types, into a single variable.
 
 While arrays are used to store multiple values of the same data type into a single variable, structs are used to store multiple values of different data types into a single variable.
 
-### Declare a struct
+#### Declare a struct
 
 ```go
 type struct_name struct {
@@ -684,7 +686,7 @@ type Person struct {
 }
 ```
 
-### Access members
+#### Access members
 
 To access any member of a structure, use the dot operator (.) between the structure variable name and the structure member
 
@@ -718,7 +720,7 @@ func main() {
 }
 ```
 
-### **Pass Struct as Function Arguments**
+#### **Pass Struct as Function Arguments**
 
 ```go
 package main
@@ -756,7 +758,7 @@ func printJobDetails(jobs Job) {
 
 ```
 
-## Maps
+### Maps
 
 Maps are used to store data values in `key:value` pairs.
 
@@ -764,7 +766,7 @@ A map is an unordered and changeable collection that does not allow duplicates. 
 
 Maps hold references to an underlying hash table.
 
-### Create a Map
+#### Create a Map
 
 1. **Using var and :=**
 
@@ -790,7 +792,7 @@ Maps hold references to an underlying hash table.
      a["year"] = "1964"
    ```
 
-### Allowed Key Types
+#### Allowed Key Types
 
 The map key can be of any data type for which the equality operator (`==`) is defined. These include:
 
@@ -810,11 +812,11 @@ Invalid key types are:
 
 These types are invalid because the equality operator (`==`) is not defined for them.
 
-### Allowed Value Types
+#### Allowed Value Types
 
 The map values can be **any** type.
 
-### **Update and Add Map Elements**
+#### **Update and Add Map Elements**
 
 ```go
 package main
@@ -835,7 +837,7 @@ func main() {
 }
 ```
 
-### **Remove Element from Map**
+#### **Remove Element from Map**
 
 ```go
 package main
