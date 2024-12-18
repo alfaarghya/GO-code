@@ -658,3 +658,199 @@ You can append elements to the end of a slice using the `append()`function
 #### Access & change
 
 it will be the same technique as array.
+
+## Struct
+
+A struct (short for structure) is used to create a collection of members of different data types, into a single variable.
+
+While arrays are used to store multiple values of the same data type into a single variable, structs are used to store multiple values of different data types into a single variable.
+
+### Declare a struct
+
+```go
+type struct_name struct {
+  member1 datatype;
+  member2 datatype;
+  member3 datatype;
+  ...
+}
+
+//example -
+type Person struct {
+  name string
+  age int
+  job string
+  salary int
+}
+```
+
+### Access members
+
+To access any member of a structure, use the dot operator (.) between the structure variable name and the structure member
+
+```go
+package main
+
+import "fmt"
+
+  //decleare a Struct
+type Job struct {
+  role string
+  salary int
+  experience int
+  location string
+}
+
+func main() {
+  var job1 Job
+
+  //job1 specification
+  job1.role = "backend developer"
+  job1.salary = 1200000
+  job1.experience = 1
+  job1.location = "remote"
+
+ //access the elements
+  fmt.Println("role >> ", jobs.role)
+  fmt.Println("salary >> ", jobs.salary)
+  fmt.Println("experience >> ", jobs.experience)
+  fmt.Println("location >> ", jobs.location)
+}
+```
+
+### **Pass Struct as Function Arguments**
+
+```go
+package main
+
+import "fmt"
+
+  //decleare a Struct
+type Job struct {
+  role string
+  salary int
+  experience int
+  location string
+}
+
+func main() {
+  var job1 Job
+
+  //job1 specification
+  job1.role = "backend developer"
+  job1.salary = 1200000
+  job1.experience = 1
+  job1.location = "remote"
+
+		//pass struct to a function
+  printJobDetails(job1)
+}
+
+func printJobDetails(jobs Job) {
+  //access the elements
+  fmt.Println("role >> ", jobs.role)
+  fmt.Println("salary >> ", jobs.salary)
+  fmt.Println("experience >> ", jobs.experience)
+  fmt.Println("location >> ", jobs.location)
+}
+
+```
+
+## Maps
+
+Maps are used to store data values in `key:value` pairs.
+
+A map is an unordered and changeable collection that does not allow duplicates. The default value of a map is nil.
+
+Maps hold references to an underlying hash table.
+
+### Create a Map
+
+1. **Using var and :=**
+
+   ```go
+   var a = map[KeyType]ValueType{key1:value1, key2:value2,...}
+   b := map[KeyType]ValueType{key1:value1, key2:value2,...}
+
+   //example
+   var a = map[string]string{"brand": "Ford", "model": "Mustang", "year": "1964"}
+   b := map[string]float64{"Arghya": 8.95, "Aritra": 8.88, "Thomas": 4.55, "Miraj": 3.25}
+   ```
+
+2. **Using make()Function**
+
+   ```go
+   var a = make(map[KeyType]ValueType)
+   b := make(map[KeyType]ValueType)
+
+   //example
+   var a = make(map[string]string) // The map is empty now
+     a["brand"] = "Ford"
+     a["model"] = "Mustang"
+     a["year"] = "1964"
+   ```
+
+### Allowed Key Types
+
+The map key can be of any data type for which the equality operator (`==`) is defined. These include:
+
+- Booleans
+- Numbers
+- Strings
+- Arrays
+- Pointers
+- Structs
+- Interfaces (as long as the dynamic type supports equality)
+
+Invalid key types are:
+
+- Slices
+- Maps
+- Functions
+
+These types are invalid because the equality operator (`==`) is not defined for them.
+
+### Allowed Value Types
+
+The map values can be **any** type.
+
+### **Update and Add Map Elements**
+
+```go
+package main
+import ("fmt")
+
+func main() {
+  var a = make(map[string]string)
+  a["brand"] = "Ford"
+  a["model"] = "Mustang"
+  a["year"] = "1964"
+
+  fmt.Println(a)
+
+  a["year"] = "1970" // Updating an element
+  a["color"] = "red" // Adding an element
+
+  fmt.Println(a)
+}
+```
+
+### **Remove Element from Map**
+
+```go
+package main
+import ("fmt")
+
+func main() {
+  var a = make(map[string]string)
+  a["brand"] = "Ford"
+  a["model"] = "Mustang"
+  a["year"] = "1964"
+
+  fmt.Println(a)
+
+  delete(a,"year")
+
+  fmt.Println(a)
+}
+```
