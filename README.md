@@ -659,7 +659,7 @@ You can append elements to the end of a slice using the `append()`function
 
 it will be the same technique as array.
 
-## Day 6 - Struct & Map
+## Day 7 - Struct & Map
 
 ### Struct
 
