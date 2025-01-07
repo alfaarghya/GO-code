@@ -856,3 +856,31 @@ func main() {
   fmt.Println(a)
 }
 ```
+
+## Day 8 - comma error syntax
+
+### Comma error syntax
+
+In GO we don’t have any `try-catch` block to handle errors instead, we have comma error syntax to handle errors in code
+
+```go
+// this help to get the answer as well as err
+ans, err = function()
+
+//example
+fmt.Println("enter your text >")
+reader := bufio.NewReader(os.Stdin)
+input, err := reader.ReadString('\n')
+fmt.Println(">>",input)
+```
+
+But in GO, if we don’t use any variables it throughs error, So most likely the upper code will through us an error because we are not using `err` anywhere
+
+But we can simply avoid `err` variable by putting a `_` . This same method can be used in place of `input` if we don’t need them.
+
+```go
+fmt.Println("enter your text >")
+reader := bufio.NewReader(os.Stdin)
+input, _ := reader.ReadString('\n')
+fmt.Println(">>",input)
+```
