@@ -663,7 +663,7 @@ it will be the same technique as array.
 
 ### Struct
 
-A struct (short for structure) is used to create a collection of members of different data types, into a single variable.
+A struct (short for structure) is used to create a collection of members of different data types, into a single variable. In other words, it’s a replication of `class` in GO lang.
 
 While arrays are used to store multiple values of the same data type into a single variable, structs are used to store multiple values of different data types into a single variable.
 
@@ -754,6 +754,45 @@ func printJobDetails(jobs Job) {
   fmt.Println("salary >> ", jobs.salary)
   fmt.Println("experience >> ", jobs.experience)
   fmt.Println("location >> ", jobs.location)
+}
+
+```
+
+#### **Method of struct**
+
+```go
+package main
+
+import "fmt"
+
+  //decleare a Struct
+type Job struct {
+  role string
+  salary int
+  experience int
+  location string
+}
+
+func main() {
+  var job1 Job
+
+  //job1 specification
+  job1.role = "backend developer"
+  job1.salary = 1200000
+  job1.experience = 1
+  job1.location = "remote"
+
+		//method of a struct
+  job1.printJobDetails()
+}
+
+//method of a struct
+func (j Job) printJobDetails() {
+
+  fmt.Println("role >> ", j.role)
+  fmt.Println("salary >> ", j.salary)
+  fmt.Println("experience >> ", j.experience)
+  fmt.Println("location >> ", j.location)
 }
 
 ```
