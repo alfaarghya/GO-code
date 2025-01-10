@@ -923,3 +923,64 @@ reader := bufio.NewReader(os.Stdin)
 input, _ := reader.ReadString('\n')
 fmt.Println(">>",input)
 ```
+
+## Day 9 - Pointers
+
+Pointers are references to a memory address.
+
+when we are passing a variable we are actually passing a copy of that variable not the actual variable. so if we want to make some change to that variable we can’t see a change.
+
+let’s understand with an example
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var x int = 10
+	fmt.Println(x)    // output -> 10
+	changeTheValue(x) // output -> 20
+	fmt.Println(x)    // output -> 10
+}
+
+func changeTheValue(x int) {
+	x = 20
+	fmt.Println(x)
+}
+```
+
+as we can see the value of `x` is not changing, that mean `x` inside the `chamgeTheValue` function is an reference of the actual value.
+
+Now if we want to change the actual value we need to use the pointer
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var x int = 10
+	var ptr = &x      //ptr is address reference of x
+	fmt.Println(ptr)  // it's shows the memory address of x
+	fmt.Println(*ptr) // it's shows the the value in the memory address -> 10
+	fmt.Println("------------------")
+
+	fmt.Println(x)      // output -> 10
+	changeTheValue(ptr) // output -> 20
+	fmt.Println(x)      // output -> 20
+}
+
+func changeTheValue(ptr *int) {
+	*ptr = 20 // change the actual value of x
+	fmt.Println(*ptr)
+}
+```
+
+### Key things to remember
+
+1. **Declare a pointer:** `var ptr *int`, means we are declaring a pointer to store only int type of data. in place of int we can put String, float, boolean etc.
+2. **Accessing the memory address:** just simply use the `ptr` to show the memory address,
+   NOTE - if we don’t put a value in memory, and try to access the memory it only shows us nil or null
+3. **Assign or Access the value in Pointer:** `*ptr` is used to access or update or assign the value on that memory address.
+4. **Reference to already available value:** `ptr := &x` is the way to access the memory address of a available value.
